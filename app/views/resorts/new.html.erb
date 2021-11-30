@@ -1,0 +1,8 @@
+<form action="/resorts" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new resort: </p>
+  <input type='text' name='resort[name]'/><br/>
+  <p>Enter resort city: </p>
+  <input type='text' name='resort[city]'></input><br/>
+  <input type='submit'/>
+</form>
