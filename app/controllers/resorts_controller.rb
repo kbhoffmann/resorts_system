@@ -1,6 +1,6 @@
 class ResortsController < ApplicationController
   def index
-    @resorts = Resort.all
+    @resorts = Resort.ordered_by_created_at
   end
 
   def new
@@ -20,5 +20,5 @@ class ResortsController < ApplicationController
     @resort = Resort.find(params[:id])
   end
 
-  
+
 end
