@@ -1,0 +1,8 @@
+<h1>All Pass Holders</h1>
+
+<% @pass_holders.each do |pass_holder| %>
+  <h3>Pass Holder Name: <%= pass_holder.name %></h3>
+  <p>Age: <%= pass_holder.age%></p>
+  <p>Season Pass: <%= pass_holder.season_pass%></p>
+  <p>Season Pass: <%= pass_holder.level%></p>
+<% end %>

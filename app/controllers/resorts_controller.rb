@@ -1,6 +1,6 @@
 class ResortsController < ApplicationController
   def index
-    @resorts = ['Resort 1', 'Resort 2', 'Resort 3']
+    @resorts = Resort.all
   end
 
   def new
@@ -15,4 +15,10 @@ class ResortsController < ApplicationController
 
       redirect_to '/resorts'
   end
+
+  def show
+    @resort = Resort.find(params[:id])
+  end
+
+  
 end
