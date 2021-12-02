@@ -8,4 +8,8 @@ class PassHoldersController < ApplicationController
     @pass_holder = PassHolder.find(params[:id])
   end
 
+  # def visitors
+  #   @visitors = PassHolder.where(params[:resort_id])
+  # end
+
 end
