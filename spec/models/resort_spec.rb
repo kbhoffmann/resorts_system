@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Resort do
+  it {should have_many :pass_holders}
+  
   describe 'Resort index' do
     # As a visitor
     # When I visit the parent index,
