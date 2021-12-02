@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#index'
 
   get '/instructors', to: 'instructors#index'
+  get '/instructors/:id', to: 'instructors#show'
 
   get '/pass_holders', to: 'pass_holders#index'
   get '/pass_holders/:id', to: 'pass_holders#show'
