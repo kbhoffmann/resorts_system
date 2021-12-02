@@ -1,3 +1,9 @@
 <% @pass_holders.each do |holder| %>
-  <p><%= holder.name %></p>
+  <h3>Name: <%= holder.name %></h3>
+  <p>ID: <%= holder.id %></p>
+  <p>Age: <%= holder.age %></p>
+  <p>Level: <%= holder.level %></p>
+  <p>Season Pass?:<%= holder.season_pass %></p>
+  <p>Created At: <%= holder.created_at %></p>
+  <p>Updated At:<%= holder.updated_at %></p>
   <% end %>
