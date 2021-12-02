@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/pass_holders', to: 'pass_holders#index'
   get '/pass_holders/:id', to: 'pass_holders#show'
 
+  get '/students', to: 'students#index'
 
   get '/resorts/new', to: 'resorts#new'
   post '/resorts', to: 'resorts#create'

@@ -1,2 +1,3 @@
 class Instructor < ApplicationRecord
-end 
+  has_many :students
+end
