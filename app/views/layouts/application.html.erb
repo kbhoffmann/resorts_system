@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header class = navbar>
+      <div class="topnav" id="siteWideNav">
+          <p> Parents:
+          <%=link_to "Resorts", "/resorts" %>
+          <%=link_to "Instructors", "/instructors" %>  | 
+          Children:
+          <%=link_to "Pass Holders", "/pass_holders" %>
+          <%=link_to "Students", "/students" %></p>
+      </div>
+    </header>
     <%= yield %>
+
   </body>
 </html>
