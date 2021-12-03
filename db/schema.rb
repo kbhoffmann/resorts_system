@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_223529) do
+ActiveRecord::Schema.define(version: 2021_12_02_231450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "instructors", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.boolean "teaches_children"
+    t.integer "years_experience"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pass_holders", force: :cascade do |t|
     t.string "name"
@@ -35,5 +44,18 @@ ActiveRecord::Schema.define(version: 2021_12_01_223529) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.string "level"
+    t.boolean "returning_student"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "instructor_id"
+    t.index ["instructor_id"], name: "index_students_on_instructor_id"
+  end
+
   add_foreign_key "pass_holders", "resorts"
+  add_foreign_key "students", "instructors"
 end

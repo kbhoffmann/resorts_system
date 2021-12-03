@@ -1,0 +1,11 @@
+<h1>All Students</h1>
+
+<% @students.each do |student| %>
+  <h3>Student Name: <%= student.name %></h3>
+  <p>Age: <%= student.age%></p>
+  <p>Level: <%= student.level%></p>
+  <p>Subject: <%= student.subject%></p>
+  <p>Returning Student: <%= student.returning_student%></p>
+  <p>Created At: <%= student.created_at%></p>
+  <p>Updated At: <%= student.updated_at%></p>
+<% end %>
