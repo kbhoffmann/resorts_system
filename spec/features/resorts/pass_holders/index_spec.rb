@@ -14,4 +14,5 @@ RSpec.describe 'Resorts pass holder index' do
     expect(page).to have_content(@jerry.name)
     expect(page).to have_content(@kevin.name)
   end
+
 end
