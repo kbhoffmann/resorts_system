@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/instructors', to: 'instructors#index'
   get '/instructors/:id', to: 'instructors#show'
+  get '/instructors/:instructor_id/students', to: 'instructor_students#index'
 
   get '/pass_holders', to: 'pass_holders#index'
   get '/pass_holders/:id', to: 'pass_holders#show'
