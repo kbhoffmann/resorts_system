@@ -1,6 +1,6 @@
 class InstructorsController < ApplicationController
   def index
-    @instructors = Instructor.all
+    @instructors = Instructor.ordered_by_created_at
   end
 
   def show
