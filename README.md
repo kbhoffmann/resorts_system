@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![database schema with two tables](https://github.com/kbhoffmann/resorts_system/blob/main/db-schema-relational-rails.png) 
 
-Things you may want to cover:
+# Resorts System: A Relational Rails Project 
 
-* Ruby version
+This project is a relational Rails app completed by Kerri Hoffmann and Hannah Warren during the course of Module 2 of our Backend Engineering program at Turing School of Software and Design. 
 
-* System dependencies
+## About
 
-* Configuration
+Ruby version: 2.7.2
+Rails version: 2.5.6
 
-* Database creation
+## Instructions to Run
 
-* Database initialization
+Clone this repo. Ensure you have the correct versions of both Ruby and Rails installed. 
 
-* How to run the test suite
+<More instructions here>
+  
+Database initialization
 
-* Services (job queues, cache servers, search engines, etc.)
+How to run the test suite
 
-* Deployment instructions
-
-* ...
