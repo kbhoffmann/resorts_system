@@ -1,7 +1,3 @@
-# README
-
-![database schema with two tables](https://github.com/kbhoffmann/resorts_system/blob/main/db-schema-relational-rails.png) 
-
 # Resorts System: A Relational Rails Project 
 
 This project is a relational Rails app completed by Kerri Hoffmann and Hannah Warren during the course of Module 2 of our Backend Engineering program at Turing School of Software and Design. 
@@ -18,6 +14,8 @@ Clone this repo. Ensure you have the correct versions of both Ruby and Rails ins
 <More instructions here>
   
 Database initialization
+  
+![database schema with two tables](https://github.com/kbhoffmann/resorts_system/blob/main/db-schema-relational-rails.png) 
 
 How to run the test suite
 
