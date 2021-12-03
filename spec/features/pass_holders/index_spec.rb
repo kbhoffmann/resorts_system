@@ -12,12 +12,14 @@ RSpec.describe "Pass holders index" do
     expect(page).to have_content(pass_holder1.name)
     expect(page).to have_content(pass_holder1.level)
     expect(page).to have_content(pass_holder1.age)
+    expect(page).to have_content(pass_holder1.season_pass)
     expect(page).to have_content(pass_holder1.created_at)
     expect(page).to have_content(pass_holder1.updated_at)
 
     expect(page).to have_content(pass_holder2.name)
     expect(page).to have_content(pass_holder2.level)
     expect(page).to have_content(pass_holder2.age)
+    expect(page).to have_content(pass_holder2.season_pass)
     expect(page).to have_content(pass_holder2.created_at)
     expect(page).to have_content(pass_holder2.updated_at)
   end
