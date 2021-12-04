@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/resorts/new', to: 'resorts#new'
   post '/resorts', to: 'resorts#create'
   get '/resorts/:id', to: 'resorts#show'
+  get '/resorts/:id/edit', to: 'resorts#edit'
+  patch '/resorts/:id', to: 'resorts#update'
   get '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#index'
 
   get '/instructors', to: 'instructors#index'

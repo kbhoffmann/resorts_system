@@ -16,6 +16,20 @@ class ResortsController < ApplicationController
     redirect_to "/resorts"
   end
 
+  def edit
+    @resort = Resort.find(params[:id])
+  end
+
+  def update
+    resort = Resort.find(params[:id])
+    resort.update(name: params[:name],
+                   city: params[:city],
+                   runs: params[:runs],
+                   ski_only: params[:ski_only]
+                  )
+    redirect_to '/resorts'
+  end
+
   def show
     @resort = Resort.find(params[:id])
     @pass_holders_count = @resort.pass_holders.count
