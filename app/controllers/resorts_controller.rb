@@ -19,11 +19,6 @@ class ResortsController < ApplicationController
   def show
     @resort = Resort.find(params[:id])
     @pass_holders = @resort.pass_holders
+    @pass_holder_count = @pass_holders.count
   end
-
-
-  # As a visitor
-  # When I visit a parent's show page
-  # I see a count of the number of children associated with this parent
-
 end
