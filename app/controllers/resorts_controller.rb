@@ -7,13 +7,13 @@ class ResortsController < ApplicationController
   end
 
   def create
-    resort = Resort.new({
-      name: params[:resort][:name],
-      city: params[:resort][:city]
-      })
-      resort.save
+    resort = Resort.create(name: params[:name],
+                           city: params[:city],
+                           runs: params[:runs],
+                           ski_only: params[:ski_only]
+                          )
 
-      redirect_to '/resorts'
+    redirect_to "/resorts"
   end
 
   def show

@@ -1,8 +1,21 @@
-<form action="/resorts" method="post">
+<!-- <form action="/resorts" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter a new resort: </p>
   <input type='text' name='resort[name]'/><br/>
   <p>Enter resort city: </p>
   <input type='text' name='resort[city]'></input><br/>
   <input type='submit'/>
-</form>
+</form> -->
+
+<%= form_with url: '/resorts', method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :city %>
+<%= form.text_field :city %>
+<%= form.label :runs %>
+<%= form.text_field :runs %>
+<%= form.label :ski_only %>
+<%= form.text_field :ski_only %>
+
+<%= form.submit "Create Resort" %>
+<% end %>
