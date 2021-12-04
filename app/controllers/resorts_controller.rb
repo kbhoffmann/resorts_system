@@ -18,7 +18,6 @@ class ResortsController < ApplicationController
 
   def show
     @resort = Resort.find(params[:id])
-    @pass_holders = @resort.pass_holders
-    @pass_holder_count = @pass_holders.count
+    @pass_holders_count = @resort.pass_holders.count
   end
 end
