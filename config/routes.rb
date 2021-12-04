@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   get '/resorts', to: 'resorts#index'
+  get '/resorts/new', to: 'resorts#new'
   get '/resorts/:id', to: 'resorts#show'
   get '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#index'
+  post '/resorts', to: 'resorts#create'
 
   get '/instructors', to: 'instructors#index'
+  get '/instructors/new', to: 'instructors#new'
+  post '/instructors', to: 'instructors#create'
   get '/instructors/:id', to: 'instructors#show'
   get '/instructors/:instructor_id/students', to: 'instructor_students#index'
 
@@ -16,6 +20,4 @@ Rails.application.routes.draw do
   get '/students', to: 'students#index'
   get '/students/:id', to: 'students#show'
 
-  get '/resorts/new', to: 'resorts#new'
-  post '/resorts', to: 'resorts#create'
 end
