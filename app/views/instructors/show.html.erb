@@ -1,4 +1,6 @@
 <h1><%= @instructor.name %></h1>
+<p>Number of Students: <%= @students_count %></p>
+<%= link_to "Students for this Instructor", "/instructors/#{@instructor.id}/students" %>
 <p>ID Number: <%= @instructor.id%></p>
 <p>Subject: <%= @instructor.subject %></p>
 <p>Teaches Children: <%= @instructor.teaches_children %></p>
