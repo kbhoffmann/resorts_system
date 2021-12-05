@@ -1,0 +1,16 @@
+<h1>Edit Student Information: <%= "#{@student.name}" %> </h1>
+
+<%= form_with url:"/students/#{@student.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br/>
+  <%= form.label :age %>
+  <%= form.number_field :age %><br/>
+  <%= form.label :subject %>
+  <%= form.text_field :subject %><br/>
+  <%= form.label :level %>
+  <%= form.text_field :level %><br/>
+  <%= form.label :returning_student %>
+  <%= form.check_box :returning_student %><br/>
+
+  <%= form.submit "Update #{@student.name}" %>
+<% end %>
