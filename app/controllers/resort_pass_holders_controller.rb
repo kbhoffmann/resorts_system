@@ -4,7 +4,6 @@ class ResortPassHoldersController < ApplicationController
     @resort = Resort.find(params[:resort_id])
     if params[:sort]
       @pass_holders = PassHolder.order(name: params[:sort])
-      # redirect_to "/resorts/#{@resort.id}/pass_holders"
     else
       @pass_holders = @resort.pass_holders
     end
