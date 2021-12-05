@@ -4,17 +4,17 @@ RSpec.describe 'the resort edit' do
   it 'links to the edit page' do
     resort = Resort.create!(name: 'Breckenridge', city: 'Breckenridge', runs: 20, ski_only: false )
 
-    visit '/resorts'
+    visit "/resorts/#{resort.id}"
 
     click_button "Edit #{resort.name}"
 
     expect(current_path).to eq("/resorts/#{resort.id}/edit")
   end
 
-  it 'can edit the resort' do
+  it 'can edit the resort information' do
     resort = Resort.create!(name: 'Breckenrid', city: 'Breck', runs: 99, ski_only: true )
 
-    visit "/resorts"
+    visit "/resorts/#{resort.id}"
 
     expect(page).to have_content('Breckenrid')
     expect(page).to have_content('Breck')
@@ -29,7 +29,7 @@ RSpec.describe 'the resort edit' do
     fill_in 'Ski only', with: false
     click_button "Update Resort"
 
-    expect(current_path).to eq("/resorts")
+    expect(current_path).to eq("/resorts/#{resort.id}")
     expect(page).to have_content('Breckenridge')
     expect(page).to have_content('Breckenridge')
     expect(page).to have_content(27)

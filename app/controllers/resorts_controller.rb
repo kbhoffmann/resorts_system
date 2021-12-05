@@ -27,7 +27,7 @@ class ResortsController < ApplicationController
                    runs: params[:runs],
                    ski_only: params[:ski_only]
                   )
-    redirect_to '/resorts'
+    redirect_to "/resorts/#{resort.id}"
   end
 
   def show

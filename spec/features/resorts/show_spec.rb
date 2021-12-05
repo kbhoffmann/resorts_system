@@ -37,8 +37,9 @@ RSpec.describe 'the resorts show page' do
     expect(page).to have_link("Passholders for this Resort")
 
     click_on "Passholders for this Resort"
-    
+
     expect(current_path).to eq("/resorts/#{winterpark.id}/pass_holders")
     expect(current_path).to_not eq("/resorts/#{breck.id}/pass_holders")
   end
+
 end
