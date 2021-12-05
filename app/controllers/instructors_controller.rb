@@ -16,6 +16,16 @@ class InstructorsController < ApplicationController
     redirect_to "/instructors"
   end
 
+  def edit
+    @instructor = Instructor.find(params[:id])
+  end
+
+  def update
+    instructor = Instructor.find(params[:id])
+    instructor.update(instructor_params)
+    redirect_to "/instructors"
+  end
+
 private
   def instructor_params
     params.permit(:name, :subject, :teaches_children, :years_experience)

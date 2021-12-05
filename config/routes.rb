@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/instructors/new', to: 'instructors#new'
   post '/instructors', to: 'instructors#create'
   get '/instructors/:id', to: 'instructors#show'
+  get '/instructors/:id/edit', to: 'instructors#edit'
+  patch '/instructors/:id', to: 'instructors#update'
   get '/instructors/:instructor_id/students', to: 'instructor_students#index'
 
   get '/pass_holders', to: 'pass_holders#index'
