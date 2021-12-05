@@ -1,3 +1,5 @@
+<%= link_to "New Student", "/instructors/#{@instructor.id}/students/new" %>
+
 <% @students.each do |student| %>
   <h3>Name: <%= student.name %></h3>
   <p>ID: <%= student.id %></p>
@@ -8,3 +10,5 @@
   <p>Created At: <%= student.created_at %></p>
   <p>Updated At:<%= student.updated_at %></p>
   <% end %>
+
+
