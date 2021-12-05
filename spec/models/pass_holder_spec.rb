@@ -11,6 +11,6 @@ RSpec.describe PassHolder do
     dana = breck.pass_holders.create!(name: 'Dana', age: 30, level: 'intermediate', season_pass: true)
     kerri = breck.pass_holders.create!(name: 'Kerri', age: 10, level: 'beginner', season_pass: true)
 
-    expect(PassHolder.sort_name_alphabetically).to eq([dana,kerri,kevin,jerry])
+    expect(PassHolder.sort_name_alphabetically).to eq([dana, jerry, kerri, kevin])
   end
 end
