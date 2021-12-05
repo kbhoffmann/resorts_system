@@ -1,4 +1,5 @@
 <%= link_to 'New Passholder', "/resorts/#{@resort.id}/resort_pass_holders/new" %>
+<%= link_to 'Sort Passholders Alphabetically', "/resorts/#{@resort.id}/resort_pass_holders?sort=asc"%>
 
 <% @pass_holders.each do |holder| %>
   <h3>Name: <%= holder.name %></h3>

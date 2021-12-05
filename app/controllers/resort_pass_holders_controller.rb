@@ -2,7 +2,13 @@ class ResortPassHoldersController < ApplicationController
 
   def index
     @resort = Resort.find(params[:resort_id])
-    @pass_holders = @resort.pass_holders
+    if params[:sort]
+      @pass_holders = PassHolder.order(name: params[:sort])
+      # redirect_to "/resorts/#{@resort.id}/pass_holders"
+    else
+      @pass_holders = @resort.pass_holders
+    end
+
   end
 
   def new
@@ -11,7 +17,7 @@ class ResortPassHoldersController < ApplicationController
 
   def create
     resort = Resort.find(params[:resort_id])
-  
+
     passholder = resort.pass_holders.create!(name: params[:name],
                                    age: params[:age],
                                    level: params[:level],
