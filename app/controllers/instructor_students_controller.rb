@@ -1,7 +1,11 @@
 class InstructorStudentsController < ApplicationController
   def index
     @instructor = Instructor.find(params[:instructor_id])
-    @students = @instructor.students
+    if params[:sort]
+      @students = @instructor.students.by_name
+    else
+      @students = @instructor.students.all
+    end
   end
 
   def new

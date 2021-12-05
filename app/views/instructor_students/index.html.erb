@@ -1,4 +1,5 @@
 <%= link_to "New Student", "/instructors/#{@instructor.id}/students/new" %>
+<%= link_to "Sort Students By Name", "/instructors/#{@instructor.id}/students?sort=desc"%>
 
 <% @students.each do |student| %>
   <h3>Name: <%= student.name %></h3>
