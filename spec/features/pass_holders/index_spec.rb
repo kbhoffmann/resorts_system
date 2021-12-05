@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Pass holders index" do
-
   it 'shows all pass holders' do
     resort = Resort.create!(name: "Winter Park", runs: 20, ski_only: true, city: "Winter Park")
-    pass_holder1 = resort.pass_holders.create!(name: "Hannah Warren", level: "beginner", age: 21, season_pass: false)
-    pass_holder2 = resort.pass_holders.create!(name: "Kerri Hoffmann", level: "advanced", age: 21, season_pass: false)
+    pass_holder1 = resort.pass_holders.create!(name: "Hannah Warren", level: "beginner", age: 21, season_pass: true)
+    pass_holder2 = resort.pass_holders.create!(name: "Kerri Hoffmann", level: "advanced", age: 21, season_pass: true)
 
     visit '/pass_holders'
 
@@ -24,6 +23,14 @@ RSpec.describe "Pass holders index" do
     expect(page).to have_content(pass_holder2.updated_at)
   end
 
+  it 'shows only records where season_pass is true' do
+    resort = Resort.create!(name: "Winter Park", runs: 20, ski_only: true, city: "Winter Park")
+    pass_holder1 = resort.pass_holders.create!(name: "Hannah Warren", level: "beginner", age: 21, season_pass: false)
+    pass_holder2 = resort.pass_holders.create!(name: "Kerri Hoffmann", level: "advanced", age: 21, season_pass: true)
 
+    visit '/pass_holders'
 
+    expect(page).to have_content(pass_holder2.name)
+    expect(page).to_not have_content(pass_holder1)
+  end
 end

@@ -1,7 +1,7 @@
 class PassHoldersController < ApplicationController
 
   def index
-    @pass_holders = PassHolder.all
+    @pass_holders = PassHolder.where(season_pass: true)
   end
 
   def show
