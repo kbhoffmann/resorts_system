@@ -1,3 +1,5 @@
+<%= link_to 'New Passholder', "/resorts/#{@resort.id}/resort_pass_holders/new" %>
+
 <% @pass_holders.each do |holder| %>
   <h3>Name: <%= holder.name %></h3>
   <p>ID: <%= holder.id %></p>
