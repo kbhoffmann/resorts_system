@@ -9,6 +9,8 @@
   <p>Subject:<%= student.subject%></p>
   <p>Created At: <%= student.created_at %></p>
   <p>Updated At:<%= student.updated_at %></p>
+  <p><%= button_to "View #{student.name}", "/students/#{student.id}", method: :get %>
+    <%= button_to "Edit #{student.name}", "/students/#{student.id}/edit", method: :get%></p>
   <% end %>
 
 
