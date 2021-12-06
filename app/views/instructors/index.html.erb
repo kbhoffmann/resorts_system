@@ -2,6 +2,7 @@
 
   <% @instructors.each do |instructor| %>
   <p><%= instructor %>Name: <%= instructor.name %>, Created at: <%= instructor.created_at %>
+    <%= button_to "View #{instructor.name}", "/instructors/#{instructor.id}", method: :get %>
     <%= button_to "Edit #{instructor.name}", "/instructors/#{instructor.id}/edit", method: :get %>
   </p>
   <% end %>
