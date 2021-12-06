@@ -1,7 +1,9 @@
 class PassHoldersController < ApplicationController
 
   def index
-    @pass_holders = PassHolder.where(season_pass: true)
+    @pass_holders = PassHolder.true_only
+    # @pass_holders = PassHolder.where(season_pass: true)
+    #@students = Student.show_only_bool_true
   end
 
   def show
