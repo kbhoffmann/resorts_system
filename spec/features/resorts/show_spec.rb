@@ -42,4 +42,15 @@ RSpec.describe 'the resorts show page' do
     expect(current_path).to_not eq("/resorts/#{breck.id}/pass_holders")
   end
 
+  it 'has a can link to edit the resort information' do
+    resort = Resort.create!(name: 'Breckenridge', city: 'Breckenridge', runs: 20, ski_only: false )
+
+    visit "/resorts/#{resort.id}"
+
+    expect(page).to have_button("Edit #{resort.name}")
+
+    click_button "Edit #{resort.name}"
+
+    expect(current_path).to eq("/resorts/#{resort.id}/edit")
+  end
 end
