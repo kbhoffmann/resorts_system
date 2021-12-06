@@ -18,6 +18,7 @@ RSpec.describe 'Instructor edit' do
     expect(page).to have_content("Olg")
     click_button("Edit Olg")
 
+    page.should have_field("Name", with: "Olg")
     fill_in(:name, with: "Olga")
     click_button("Update Instructor")
 
