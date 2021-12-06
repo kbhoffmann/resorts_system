@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/instructors/:id', to: 'instructors#show'
   get '/instructors/:id/edit', to: 'instructors#edit'
   patch '/instructors/:id', to: 'instructors#update'
+  delete '/instructors/:id', to: 'instructors#destroy'
 
   get '/instructors/:instructor_id/students', to: 'instructor_students#index'
   get '/instructors/:instructor_id/students/new', to: 'instructor_students#new'

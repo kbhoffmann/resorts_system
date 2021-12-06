@@ -8,4 +8,5 @@
 <p>Created At: <%= @instructor.created_at %></p>
 <p>Updated At: <%= @instructor.updated_at %></p>
 
-<%= link_to "Update #{@instructor.name}", "/instructors/#{@instructor.id}/edit" %>
+<%= link_to "Update #{@instructor.name}", "/instructors/#{@instructor.id}/edit", method: :get %>
+<%= link_to "Delete #{@instructor.name}", "/instructors/#{@instructor.id}", method: :delete %>
