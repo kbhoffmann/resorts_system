@@ -26,7 +26,7 @@ RSpec.describe "Students index" do
     expect(page).to have_content(tristan.updated_at)
   end
 
-  it 'links to viewing a student' do
+  it 'links to student show view' do
     hans = Instructor.create!(name: "Hans", subject: "skiing", teaches_children: true, years_experience: 30)
     gretchen = hans.students.create!(name: 'Gretchen', age: 20, subject: "cross-country skiing", returning_student: true, level:"advanced")
     tristan = hans.students.create!(name: 'Tristan', age: 14, subject: "snowboarding", returning_student: false, level:"advanced")
@@ -38,7 +38,7 @@ RSpec.describe "Students index" do
     expect(current_path).to eq("/students/#{gretchen.id}")
   end
 
-  it 'links to editing a student' do
+  it 'links to student edit view' do
     hans = Instructor.create!(name: "Hans", subject: "skiing", teaches_children: true, years_experience: 30)
     gretchen = hans.students.create!(name: 'Gretchen', age: 20, subject: "cross-country skiing", returning_student: true, level:"advanced")
     tristan = hans.students.create!(name: 'Tristan', age: 14, subject: "snowboarding", returning_student: false, level:"advanced")
@@ -49,8 +49,5 @@ RSpec.describe "Students index" do
 
     expect(current_path).to eq("/students/#{gretchen.id}/edit")
   end
-
-
-
 
 end
