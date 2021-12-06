@@ -2,13 +2,13 @@
 
 <%= form_with url:"/instructors/#{@instructor.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %><br/>
+  <%= form.text_field :name, value: @instructor.name %><br/>
   <%= form.label :subject %>
-  <%= form.text_field :subject %><br/>
+  <%= form.text_field :subject, value: @instructor.subject %><br/>
   <%= form.label :teaches_children %>
-  <%= form.check_box :teaches_children %><br/>
+  <%= form.check_box :teaches_children, value: @instructor.teaches_children %><br/>
   <%= form.label :years_experience %>
-  <%= form.number_field :years_experience %><br/>
+  <%= form.number_field :years_experience, value: @instructor.years_experience %><br/>
 
   <%= form.submit 'Update Instructor' %>
 <% end %>

@@ -21,6 +21,7 @@ RSpec.describe 'Instructor students edit' do
     expect(page).to have_content("Mary")
     click_link("Update #{@student.name}")
 
+    expect(page).to have_field("Name", with: "Mary")
     fill_in(:name, with: "MaryBeth")
     click_button("Update #{@student.name}")
 
