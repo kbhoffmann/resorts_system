@@ -18,6 +18,8 @@ RSpec.describe 'Resorts index' do
 
     visit '/resorts'
 
+    expect(page).to have_button("Edit #{resort.name}")
+
     click_button "Edit #{resort.name}"
     expect(current_path).to eq("/resorts/#{resort.id}/edit")
   end
