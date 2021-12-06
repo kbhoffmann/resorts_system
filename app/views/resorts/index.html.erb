@@ -9,4 +9,6 @@
   <p>ski_only: <%= resort.ski_only %></p>
   <p>Created at: <%= resort.created_at %></p>
   <p>Updated at: <%= resort.updated_at %></p>
+  <p><%= button_to "Edit #{resort.name}", "/resorts/#{resort.id}/edit", method: :get %></p>
+</p>
 <% end %>
