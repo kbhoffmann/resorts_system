@@ -12,13 +12,9 @@ RSpec.describe Resort do
 
       expect(Resort.ordered_by_created_at).to eq([breck, copper, seven_springs])
     end
-
+  end
   end
 
-
-  end
-
-  describe 'relationships'
-  describe 'validations'
-  describe 'class methods'
-end
+  # describe 'relationships'
+  # describe 'validations'
+  # describe 'class methods'
