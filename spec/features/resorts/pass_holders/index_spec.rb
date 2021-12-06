@@ -25,5 +25,6 @@ RSpec.describe 'Resorts pass holder index' do
     click_link('Sort Passholders Alphabetically')
 
     expect(@dana.name).to appear_before(@jerry.name)
+    expect(@jerry.name).to_not appear_before(@dana.name)
   end
 end
