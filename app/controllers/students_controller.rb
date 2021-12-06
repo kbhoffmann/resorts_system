@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @students = Student.show_only_bool_true
   end
 
   def show
