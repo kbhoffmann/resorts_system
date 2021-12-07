@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/resorts/:id', to: 'resorts#show'
   get '/resorts/:id/edit', to: 'resorts#edit'
   patch '/resorts/:id', to: 'resorts#update'
+  delete '/resorts/:id', to: 'resorts#destroy'
 
   get '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#index'
   get '/resorts/:resort_id/resort_pass_holders/new', to: 'resort_pass_holders#new'
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   get '/pass_holders/:id', to: 'pass_holders#show'
   get '/pass_holders/:id/edit', to: 'pass_holders#edit'
   patch '/pass_holders/:id', to: 'pass_holders#update'
+  delete '/pass_holders/:id', to: 'pass_holders#destroy'
 
   get '/students', to: 'students#index'
   get '/students/:id', to: 'students#show'

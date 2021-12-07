@@ -8,11 +8,6 @@ class ResortsController < ApplicationController
 
   def create
     resort = Resort.create(resort_params)
-    # (name: params[:name],
-    #                        city: params[:city],
-    #                        runs: params[:runs],
-    #                        ski_only: params[:ski_only]
-    #                       )
 
     redirect_to "/resorts"
   end
@@ -32,6 +27,12 @@ class ResortsController < ApplicationController
   def show
     @resort = Resort.find(params[:id])
     @pass_holders_count = @resort.pass_holders.count
+  end
+
+  def destroy
+    resort = Resort.find(params[:id])
+    resort.destroy
+    redirect_to "/resorts"
   end
 
   private
