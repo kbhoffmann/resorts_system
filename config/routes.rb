@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   get '/students/:id', to: 'students#show'
   get '/students/:id/edit', to: 'students#edit'
   patch '/students/:id', to: 'students#update'
+  delete '/students/:id', to: 'students#destroy'
 
 end
