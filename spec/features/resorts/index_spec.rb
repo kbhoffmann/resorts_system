@@ -1,26 +1,45 @@
 require 'rails_helper'
 
 RSpec.describe 'Resorts index' do
+
+  before(:each) do
+    @breck = Resort.create!(name: 'Breckenridge', city: 'Breckenridge', runs: 20, ski_only: false )
+    @copper = Resort.create!(name: 'Copper', city: 'Frisco', runs: 15, ski_only: true)
+    @seven_springs = Resort.create!(name: 'Seven Springs', city: 'Champion', runs: 9, ski_only: false)
+  #   @kerri = @breck.pass_holders.create!(name: 'Kerri', age: 11, level: 'beginner', season_pass: true)
+  #   @rob = @breck.pass_holders.create!(name: 'Rob', age: 40, level: 'advanced', season_pass: false)
+  #   @dana = @breck.pass_holders.create!(name: 'Dana', age: 31, level: 'intermediate', season_pass: false)
+  end
+
   it 'shows when each resort was created' do
-    breck = Resort.create!(name: 'Breckenridge', city: 'Breckenridge', runs: 20, ski_only: false )
-    copper = Resort.create!(name: 'Copper', city: 'Frisco', runs: 15, ski_only: true)
-    seven_springs = Resort.create!(name: 'Seven Springs', city: 'Champion', runs: 9, ski_only: false)
 
     visit "/resorts"
 
-    expect(page).to have_content(breck.created_at)
-    expect(page).to have_content(copper.created_at)
-    expect(page).to have_content(seven_springs.created_at)
+    expect(page).to have_content(@breck.created_at)
+    expect(page).to have_content(@copper.created_at)
+    expect(page).to have_content(@seven_springs.created_at)
+  end
+
+  it 'has a button to create a new resort' do
+    visit "/resorts"
+
+    expect(page).to have_link("Add New Resort")
+
+    click_link "Add New Resort"
+
+    expect(current_path).to eq("/resorts/new")
   end
 
   it 'has a can link to edit the resort information' do
-    resort = Resort.create!(name: 'Breckenridge', city: 'Breckenridge', runs: 20, ski_only: false )
 
     visit '/resorts'
 
-    expect(page).to have_button("Edit #{resort.name}")
+    expect(page).to have_button("Edit #{@breck.name}")
 
-    click_button "Edit #{resort.name}"
-    expect(current_path).to eq("/resorts/#{resort.id}/edit")
+    click_button "Edit #{@breck.name}"
+
+    expect(current_path).to eq("/resorts/#{@breck.id}/edit")
+    expect(current_path).to_not eq("/resorts/#{@copper.id}/edit")
+    expect(current_path).to_not eq("/resorts/#{@seven_springs.id}/edit")
   end
 end
