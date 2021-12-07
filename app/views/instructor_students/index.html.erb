@@ -1,3 +1,12 @@
+<%= link_to "New Student", "/instructors/#{@instructor.id}/students/new" %> 
+<%= link_to "Sort Students By Name", "/instructors/#{@instructor.id}/students?sort=desc"%>
+
+<%= form_tag("/instructors/#{@instructor.id}/students", method: :get) do %>
+  <%= label_tag 'min_age', "Specify minimum age filter for students" %>
+  <%= number_field_tag 'min_age', params[:min_age] %>
+  <%= submit_tag "Filter" %>
+<% end %>
+
 <% @students.each do |student| %>
   <h3>Name: <%= student.name %></h3>
   <p>ID: <%= student.id %></p>
@@ -7,4 +16,8 @@
   <p>Subject:<%= student.subject%></p>
   <p>Created At: <%= student.created_at %></p>
   <p>Updated At:<%= student.updated_at %></p>
+  <p><%= button_to "View #{student.name}", "/students/#{student.id}", method: :get %>
+    <%= button_to "Edit #{student.name}", "/students/#{student.id}/edit", method: :get%></p>
   <% end %>
+
+

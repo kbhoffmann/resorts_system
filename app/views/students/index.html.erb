@@ -1,4 +1,4 @@
-<h1>All Students</h1>
+<h1>Returning Students</h1>
 
 <% @students.each do |student| %>
   <h3>Student Name: <%= student.name %></h3>
@@ -8,4 +8,8 @@
   <p>Returning Student: <%= student.returning_student%></p>
   <p>Created At: <%= student.created_at%></p>
   <p>Updated At: <%= student.updated_at%></p>
+
+  <p><%= button_to "View #{student.name}", "/students/#{student.id}", method: :get %>
+  <%= button_to "Edit #{student.name}", "/students/#{student.id}/edit", method: :get %></p>
+  <%= button_to "Delete #{student.name}", "/students/#{student.id}", method: :delete %></p>
 <% end %>

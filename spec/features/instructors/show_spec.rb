@@ -42,4 +42,14 @@ RSpec.describe 'the instructors show page' do
     expect(current_path).to eq("/instructors/#{hans.id}/students")
     expect(current_path).to_not eq("/instructors/#{rob.id}/students")
   end
+
+  it 'has a link to delete the instructor' do
+    hans = Instructor.create!(name: "Hans", subject: "skiing", teaches_children: true, years_experience: 30)
+    rob = Instructor.create!(name: "Hans", subject: "snowboarding", teaches_children: false, years_experience: 25)
+
+    visit "/instructors/#{hans.id}"
+
+    expect(page).to have_link("Delete Hans")
+  end
+
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
   get '/', to: 'welcome#index'
 
   get '/resorts', to: 'resorts#index'
@@ -10,15 +10,22 @@ Rails.application.routes.draw do
   patch '/resorts/:id', to: 'resorts#update'
   delete '/resorts/:id', to: 'resorts#destroy'
 
-  get '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#index'
-  #line above an extra path?????
   get '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#index'
   get '/resorts/:resort_id/resort_pass_holders/new', to: 'resort_pass_holders#new'
   post '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#create'
+  post '/resorts', to: 'resorts#create'
 
   get '/instructors', to: 'instructors#index'
+  get '/instructors/new', to: 'instructors#new'
+  post '/instructors', to: 'instructors#create'
   get '/instructors/:id', to: 'instructors#show'
+  get '/instructors/:id/edit', to: 'instructors#edit'
+  patch '/instructors/:id', to: 'instructors#update'
+  delete '/instructors/:id', to: 'instructors#destroy'
+
   get '/instructors/:instructor_id/students', to: 'instructor_students#index'
+  get '/instructors/:instructor_id/students/new', to: 'instructor_students#new'
+  post '/instructors/:instructor_id/students', to: 'instructor_students#create'
 
   get '/pass_holders', to: 'pass_holders#index'
   get '/pass_holders/:id', to: 'pass_holders#show'
@@ -28,4 +35,8 @@ Rails.application.routes.draw do
 
   get '/students', to: 'students#index'
   get '/students/:id', to: 'students#show'
+  get '/students/:id/edit', to: 'students#edit'
+  patch '/students/:id', to: 'students#update'
+  delete '/students/:id', to: 'students#destroy'
+
 end

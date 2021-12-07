@@ -1,7 +1,11 @@
 <h1>Instructors</h1>
 
-<ul>
   <% @instructors.each do |instructor| %>
-  <li><%= instructor %>Name: <%= instructor.name %>, Created at: <%= instructor.created_at%></li>
+  <p><%= instructor %>Name: <%= instructor.name %>, Created at: <%= instructor.created_at %>
+    <%= button_to "View #{instructor.name}", "/instructors/#{instructor.id}", method: :get %>
+    <%= button_to "Edit #{instructor.name}", "/instructors/#{instructor.id}/edit", method: :get %>
+    <%= button_to "Delete #{instructor.name}", "/instructors/#{instructor.id}", method: :delete %>
+  </p>
   <% end %>
-</ul>
+
+<%= link_to "New Instructor", "/instructors/new" %>
