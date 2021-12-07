@@ -11,4 +11,5 @@
 
   <p><%= button_to "View #{student.name}", "/students/#{student.id}", method: :get %>
   <%= button_to "Edit #{student.name}", "/students/#{student.id}/edit", method: :get %></p>
+  <%= button_to "Delete #{student.name}", "/students/#{student.id}", method: :delete %></p>
 <% end %>

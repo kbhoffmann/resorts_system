@@ -44,4 +44,17 @@ RSpec.describe "Students index" do
     expect(current_path).to eq("/students/#{gretchen.id}/edit")
   end
 
+  it 'deletes a student from the index' do
+    hans = Instructor.create!(name: "Hans", subject: "skiing", teaches_children: true, years_experience: 30)
+    gretchen = hans.students.create!(name: 'Gretchen', age: 20, subject: "cross-country skiing", returning_student: true, level:"advanced")
+    tristan = hans.students.create!(name: 'Tristan', age: 14, subject: "snowboarding", returning_student: false, level:"advanced")
+    bob = hans.students.create!(name: 'Bob', age: 21, subject: "skiing", returning_student: false, level:"advanced")
+
+    visit "/students"
+    click_button "Delete Gretchen"
+
+    expect(current_path).to eq("/students")
+    expect(page).to_not have_content("Gretchen")
+  end
+
 end
