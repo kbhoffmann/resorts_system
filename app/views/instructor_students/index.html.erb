@@ -1,5 +1,11 @@
-<%= link_to "New Student", "/instructors/#{@instructor.id}/students/new" %>
+<%= link_to "New Student", "/instructors/#{@instructor.id}/students/new" %> 
 <%= link_to "Sort Students By Name", "/instructors/#{@instructor.id}/students?sort=desc"%>
+
+<%= form_tag("/instructors/#{@instructor.id}/students", method: :get) do %>
+  <%= label_tag 'min_age', "Specify minimum age filter for students" %>
+  <%= number_field_tag 'min_age', params[:min_age] %>
+  <%= submit_tag "Only return students at or over the given age" %>
+<% end %>
 
 <% @students.each do |student| %>
   <h3>Name: <%= student.name %></h3>

@@ -8,4 +8,9 @@ class Student < ApplicationRecord
   def self.by_name
     self.order(:name)
   end
+
+  def self.min_age(provided)
+    self.where("age >= #{provided}")
+  end
+  
 end
