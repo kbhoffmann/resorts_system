@@ -1,7 +1,12 @@
+
+
 <h1>Pass Holder Record: <%= @pass_holder.name %></h1>
+<%= button_to "Update #{@pass_holder.name}", "/pass_holders/#{@pass_holder.id}/edit", method: :get %>
 <p>ID Number: <%= @pass_holder.id%></p>
 <p>Age: <%= @pass_holder.age %></p>
 <p>Season Pass Holder?: <%= @pass_holder.season_pass %></p>
 <p>Level: <%= @pass_holder.level %></p>
 <p>Created At: <%= @pass_holder.created_at %></p>
 <p>Updated At: <%= @pass_holder.updated_at %></p>
+
+<%= button_to "Delete #{@pass_holder.name}", "/pass_holders/#{@pass_holder.id}", method: :delete %>

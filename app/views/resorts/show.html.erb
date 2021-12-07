@@ -1,9 +1,11 @@
 <h1><%= @resort.name %></h1>
-<p>Number of Passholders: <%= @pass_holders_count%></p>
+<%= button_to "Edit #{@resort.name}", "/resorts/#{@resort.id}/edit", method: :get %>
 <%= link_to "Passholders for this Resort", "/resorts/#{@resort.id}/pass_holders" %>
+<p>Number of Passholders: <%= @pass_holders_count%></p>
 <p>ID Number: <%= @resort.id%></p>
 <p>City: <%= @resort.city %></p>
 <p>Ski_Only?: <%= @resort.ski_only %></p>
 <p>Runs: <%= @resort.runs %></p>
 <p>Created At: <%= @resort.created_at %></p>
 <p>Updated At: <%= @resort.updated_at %></p>
+<%= button_to "Delete #{@resort.name}", "/resorts/#{@resort.id}", method: :delete %>

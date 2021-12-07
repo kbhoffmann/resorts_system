@@ -20,4 +20,13 @@ RSpec.describe 'the student show page' do
 
     expect(page).to_not have_content(tristan.name)
   end
+
+  it 'has a delete button' do
+    hans = Instructor.create!(name: "Hans", subject: "skiing", teaches_children: true, years_experience: 30)
+    gretchen = hans.students.create!(name: 'Gretchen', age: 20, subject: "cross-country skiing", returning_student: true, level:"advanced")
+
+    visit "/students/#{gretchen.id}"
+
+    expect(page).to have_link("Delete Gretchen")
+  end
 end

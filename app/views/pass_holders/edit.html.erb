@@ -1,0 +1,11 @@
+<%= form_with url: "/pass_holders/#{@pass_holder.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+  <%= form.label :level %>
+  <%= form.text_field :level %>
+  <%= form.label :season_pass %>
+  <%= form.text_field :season_pass %>
+  <%= form.submit 'Update Passholder' %>
+<% end  %>
