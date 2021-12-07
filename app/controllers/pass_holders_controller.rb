@@ -14,10 +14,14 @@ class PassHoldersController < ApplicationController
 
   def update
     pass_holder = PassHolder.find(params[:id])
-
     pass_holder.update(pass_holder_params)
-
     redirect_to "/pass_holders/#{pass_holder.id}"
+  end
+
+  def destroy
+    pass_holder = PassHolder.find(params[:id])
+    pass_holder.destroy
+    redirect_to '/pass_holders'
   end
 
   private
