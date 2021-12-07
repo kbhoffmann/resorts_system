@@ -12,7 +12,7 @@ RSpec.describe 'Resorts pass holder index' do
   end
 
   it 'shows all of the names for pass_holders at a given resort' do
-    visit "/resorts/#{@breck.id}/pass_holders"
+    visit "/resorts/#{@breck.id}/resort_pass_holders"
 
     expect(page).to have_content(@jerry.name)
     expect(page).to have_content(@kevin.name)
@@ -20,7 +20,7 @@ RSpec.describe 'Resorts pass holder index' do
   end
 
   it 'has a link to sort all the passholders in alphabetical order' do
-    visit "/resorts/#{@breck.id}/pass_holders"
+    visit "/resorts/#{@breck.id}/resort_pass_holders"
 
     click_link('Sort Passholders Alphabetically')
 
