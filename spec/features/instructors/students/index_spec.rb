@@ -62,7 +62,7 @@ RSpec.describe "Instructor's students index" do
     visit "/instructors/#{hans.id}/students"
 
     fill_in(:min_age, with: 18)
-    click_button("Only return students at or over the given age")
+    click_button("Filter")
     
     expect(current_path).to eq("/instructors/#{hans.id}/students")
     expect(page).to have_content(gretchen.name)
