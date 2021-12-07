@@ -7,11 +7,12 @@ class ResortsController < ApplicationController
   end
 
   def create
-    resort = Resort.create(name: params[:name],
-                           city: params[:city],
-                           runs: params[:runs],
-                           ski_only: params[:ski_only]
-                          )
+    resort = Resort.create(resort_params)
+    # (name: params[:name],
+    #                        city: params[:city],
+    #                        runs: params[:runs],
+    #                        ski_only: params[:ski_only]
+    #                       )
 
     redirect_to "/resorts"
   end
@@ -22,16 +23,20 @@ class ResortsController < ApplicationController
 
   def update
     resort = Resort.find(params[:id])
-    resort.update(name: params[:name],
-                   city: params[:city],
-                   runs: params[:runs],
-                   ski_only: params[:ski_only]
-                  )
+
+    resort.update(resort_params)
+
     redirect_to "/resorts/#{resort.id}"
   end
 
   def show
     @resort = Resort.find(params[:id])
     @pass_holders_count = @resort.pass_holders.count
+  end
+
+  private
+
+  def resort_params
+    params.permit(:name, :city, :runs, :ski_only)
   end
 end

@@ -14,12 +14,15 @@ class PassHoldersController < ApplicationController
 
   def update
     pass_holder = PassHolder.find(params[:id])
-    pass_holder.update(name: params[:name],
-                   age: params[:age],
-                   level: params[:level],
-                   season_pass: params[:season_pass]
-                  )
+
+    pass_holder.update(pass_holder_params)
+
     redirect_to "/pass_holders/#{pass_holder.id}"
   end
 
+  private
+
+  def pass_holder_params
+    params.permit(:name, :age, :level, :season_pass)
+  end
 end

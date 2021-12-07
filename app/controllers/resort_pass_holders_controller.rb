@@ -15,14 +15,15 @@ class ResortPassHoldersController < ApplicationController
   def create
     resort = Resort.find(params[:resort_id])
 
-    passholder = resort.pass_holders.create!(name: params[:name],
-                                   age: params[:age],
-                                   level: params[:level],
-                                   season_pass: params[:season_pass],
-                                   resort_id: params[:resort_id]
-                                  )
+    resort.pass_holders.create!(resort_pass_holder_params)
 
     redirect_to "/resorts/#{resort.id}/resort_pass_holders"
+  end
+
+  private
+
+  def resort_pass_holder_params
+    params.permit(:name, :age, :level, :season_pass, :resort_id)
   end
 
 end
