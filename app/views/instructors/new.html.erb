@@ -1,0 +1,12 @@
+<%= form_with url: "/instructors", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br/>
+  <%= form.label :subject %>
+  <%= form.text_field :subject %><br/>
+  <%= form.label :teaches_children %>
+  <%= form.check_box :teaches_children %><br/>
+  <%= form.label :years_experience %>
+  <%= form.number_field :years_experience %><br/>
+
+  <%= form.submit "Create Instructor" %>
+<% end %>

@@ -16,6 +16,20 @@ RSpec.describe 'Instructors index' do
     expect(bob.name).to appear_before(tristan.name)
   end
 
+  it 'links to the instructor show view' do
+    instructor = Instructor.create!(name: "Olga", subject: "skiing", teaches_children: false, years_experience: 5)
+    visit '/instructors'
 
+    click_button("View #{instructor.name}")
+    expect(current_path).to eq("/instructors/#{instructor.id}")
+  end
+
+  it 'links to the instructor edit view' do
+    instructor = Instructor.create!(name: "Olga", subject: "skiing", teaches_children: false, years_experience: 5)
+    visit '/instructors'
+
+    click_button("Edit #{instructor.name}")
+    expect(current_path).to eq("/instructors/#{instructor.id}/edit")
+  end
 
 end

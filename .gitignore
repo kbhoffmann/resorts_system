@@ -30,3 +30,5 @@
 /coverage/*
 
 config/.DS_Store
+
+.vscode/

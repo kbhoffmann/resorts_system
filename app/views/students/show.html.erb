@@ -6,3 +6,6 @@
 <p>Returning Student: <%= @student.returning_student %></p>
 <p>Created At: <%= @student.created_at %></p>
 <p>Updated At: <%= @student.updated_at %></p>
+
+<%= link_to "Update #{@student.name}", "/students/#{@student.id}/edit"%>
+<%= link_to "Delete #{@student.name}", "/students/#{@student.id}", method: :delete %>
