@@ -1,0 +1,12 @@
+<%= form_with url: "/resorts/#{@resort.id}/resort_pass_holders", method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :age %>
+<%= form.text_field :age %>
+<%= form.label :level %>
+<%= form.text_field :level %>
+<%= form.label :season_pass %>
+<%= form.text_field :season_pass %>
+
+<%= form.submit "Create New Passholder" %>
+<% end %>

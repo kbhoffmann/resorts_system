@@ -1,0 +1,11 @@
+<%= form_with url: "/resorts/#{@resort.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+  <%= form.label :runs %>
+  <%= form.text_field :runs %>
+  <%= form.label :ski_only %>
+  <%= form.text_field :ski_only %>
+  <%= form.submit 'Update Resort' %>
+<% end  %>

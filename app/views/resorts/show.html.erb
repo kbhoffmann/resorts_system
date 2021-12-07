@@ -1,3 +1,5 @@
+<%= button_to "Edit #{@resort.name}", "/resorts/#{@resort.id}/edit", method: :get %></p>
+
 <h1><%= @resort.name %></h1>
 <p>Number of Passholders: <%= @pass_holders_count%></p>
 <%= link_to "Passholders for this Resort", "/resorts/#{@resort.id}/pass_holders" %>
