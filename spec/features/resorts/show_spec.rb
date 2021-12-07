@@ -63,4 +63,13 @@ RSpec.describe 'the resorts show page' do
     expect(current_path).to_not eq("/resorts/#{@copper.id}/edit")
     expect(current_path).to_not eq("/resorts/#{@seven_springs.id}/edit")
   end
+
+  it 'has a button to delete a the resort' do
+
+    visit "/resorts/#{@breck.id}"
+    
+    expect(page).to have_button("Delete #{@breck.name}")
+    expect(page).to_not have_button("Delete #{@copper.name}")
+    expect(page).to_not have_button("Delete #{@seven_springs.name}")
+   end
 end

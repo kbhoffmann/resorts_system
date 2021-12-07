@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/resorts/:id', to: 'resorts#show'
   get '/resorts/:id/edit', to: 'resorts#edit'
   patch '/resorts/:id', to: 'resorts#update'
+  delete '/resorts/:id', to: 'resorts#destroy'
 
   get '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#index'
   #line above an extra path?????
