@@ -23,11 +23,6 @@ class InstructorStudentsController < ApplicationController
     redirect_to "/instructors/#{@instructor.id}/students"
   end
 
-  # def filter 
-  #   @instructor = Instructor.find(params[:instructor_id])
-  #   @students = @instructor.students.min_age(params[:min_age])
-  # end
-
 private
   def instructor_students_params
     params.permit(:name, :level, :age, :returning_student, :subject)
