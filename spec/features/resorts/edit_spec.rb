@@ -29,6 +29,8 @@ RSpec.describe 'the resort edit' do
     visit "/resorts/#{breck.id}"
 
     expect(page).to have_content('Breckenrid')
+    expect(page).to_not have_content("Copper")
+    expect(page).to_not have_content("Seven Springs")
     expect(page).to have_content(99)
     expect(page).to have_content(true)
 
@@ -38,6 +40,7 @@ RSpec.describe 'the resort edit' do
     fill_in 'City', with: 'Breckenridge'
     fill_in 'Runs', with: 27
     fill_in 'Ski only', with: false
+
     click_button "Update Resort"
 
     expect(current_path).to eq("/resorts/#{breck.id}")
@@ -45,6 +48,8 @@ RSpec.describe 'the resort edit' do
     expect(current_path).to_not eq("/resorts/#{@seven_springs.id}")
     expect(page).to have_content('Breckenridge')
     expect(page).to have_content(27)
+    expect(page).to_not have_content(99)
     expect(page).to have_content(false)
+    expect(page).to_not have_content(true)
   end
 end
