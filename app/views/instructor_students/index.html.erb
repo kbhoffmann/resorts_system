@@ -4,7 +4,7 @@
 <%= form_tag("/instructors/#{@instructor.id}/students", method: :get) do %>
   <%= label_tag 'min_age', "Specify minimum age filter for students" %>
   <%= number_field_tag 'min_age', params[:min_age] %>
-  <%= submit_tag "Only return students at or over the given age" %>
+  <%= submit_tag "Filter" %>
 <% end %>
 
 <% @students.each do |student| %>
