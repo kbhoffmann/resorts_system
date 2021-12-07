@@ -2,15 +2,10 @@ class ResortPassHoldersController < ApplicationController
 
   def index
     @resort = Resort.find(params[:resort_id])
+    @pass_holders = @resort.pass_holders
     if params[:sort]
-      @pass_holders = PassHolder.sort_name_alphabetically
-      # @pass_holders = @pass_holders.sort_name_alphabetically
-      # @pass_holders = PassHolder.order(name: params[:sort])
-    else
-      @pass_holders = @resort.pass_holders
-      #@students = @instructor.students.all
+      @pass_holders = @pass_holders.sort_name_alphabetically
     end
-
   end
 
   def new
