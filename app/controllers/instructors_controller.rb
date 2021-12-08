@@ -1,6 +1,12 @@
 class InstructorsController < ApplicationController
   def index
-    @instructors = Instructor.ordered_by_created_at
+    if params[:sort]
+      @instructors_with_counts = Instructor.all.joins(
+
+      )
+    else
+      Instructor.ordered_by_created_at
+    end
   end
 
   def show

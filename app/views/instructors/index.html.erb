@@ -1,5 +1,7 @@
 <h1>Instructors</h1>
 
+  <%= link_to "Sort instructors by number of students", "/instructors?sort=desc" %>
+
   <% @instructors.each do |instructor| %>
   <h2>Name: <%= instructor.name %></h2>
     <p>Instructor ID: <%= instructor.id %></p>
