@@ -9,13 +9,26 @@ Rails version: 2.5.6
 
 ## Instructions to Run
 
-Clone this repo. Ensure you have the correct versions of both Ruby and Rails installed. 
+Ensure you have the correct versions of both Ruby and Rails installed. 
 
-<More instructions here>
-  
-Database initialization
-  
+Clone this repo. 
+
+Install the repo's dependencies with
+```bundle install```
+
+Then create your local database with
+```
+rake db:create
+rake db:seed
+```
+Run the rails server with 
+```
+rails server
+```
+And visit localhost:3000 to look around! 
+
+### App database schema:
 ![database schema with two tables](https://github.com/kbhoffmann/resorts_system/blob/main/db-schema-relational-rails.png) 
 
-How to run the test suite
-
+## How to run the test suite
+``` bundle exec rspec ```
