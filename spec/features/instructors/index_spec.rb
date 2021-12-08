@@ -17,7 +17,6 @@ RSpec.describe 'Instructors index' do
 
     visit "/instructors"
     
-
     click_link("Sort instructors by number of students")
 
     expect(page).to have_content(bob.name)

@@ -1,11 +1,9 @@
 class InstructorsController < ApplicationController
   def index
     if params[:sort]
-      @instructors_with_counts = Instructor.all.joins(
-
-      )
+      @instructors = Instructor.ordered_by_student_count
     else
-      Instructor.ordered_by_created_at
+      @instructors = Instructor.ordered_by_created_at
     end
   end
 

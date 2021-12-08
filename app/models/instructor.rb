@@ -5,7 +5,8 @@ class Instructor < ApplicationRecord
     order(created_at: :desc)
   end
 
-  # def self.ordered_by_student_count
-  #   order(students.count)
-  # end
+  def self.ordered_by_student_count
+    left_joins(:students).group(:id).order(Arel.sql("COUNT(students.id) DESC"))
+  end
+  
 end
