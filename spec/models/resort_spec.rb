@@ -16,7 +16,3 @@ RSpec.describe Resort do
     end
   end
   end
-
-  # describe 'relationships'
-  # describe 'validations'
-  # describe 'class methods'
