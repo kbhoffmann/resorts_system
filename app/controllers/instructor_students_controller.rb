@@ -6,8 +6,6 @@ class InstructorStudentsController < ApplicationController
       @students = @instructor.students.by_name
     elsif params[:min_age]
       @students = @instructor.students.min_age(params[:min_age]) 
-    elsif params[:sort] && params[:min_age]
-      @students = @instructor.students.by_name.min_age(params[:min_age])
     else
       @students = @instructor.students.all
     end

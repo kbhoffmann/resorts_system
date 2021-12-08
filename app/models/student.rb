@@ -6,11 +6,11 @@ class Student < ApplicationRecord
   end
 
   def self.by_name
-    self.order(:name)
+    order(:name)
   end
 
   def self.min_age(provided)
-    self.where("age >= #{provided}")
+    where("age >= #{provided}")
   end
   
 end
