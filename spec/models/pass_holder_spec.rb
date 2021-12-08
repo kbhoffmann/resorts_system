@@ -6,7 +6,7 @@ RSpec.describe PassHolder do
 
     @jerry = @breck.pass_holders.create!(name: 'Jerry Seinfeld', age: 63, level: 'intermediate', season_pass: true)
     @kevin = @breck.pass_holders.create!(name: 'Kevin Hart', age: 43, level: 'advanced', season_pass: false)
-    @dana = @breck.pass_holders.create!(name: 'Dana', age: 30, level: 'intermediate', season_pass: true)
+    @dana = @breck.pass_holders.create!(name: 'Dana', age: 15, level: 'intermediate', season_pass: true)
     @kerri = @breck.pass_holders.create!(name: 'Kerri', age: 10, level: 'beginner', season_pass: false)
   end
 
@@ -23,5 +23,13 @@ RSpec.describe PassHolder do
 
     expect(PassHolder.true_only).to eq([@jerry, @dana])
     expect(PassHolder.true_only).to_not eq([@kevin, @kerri])
+  end
+
+  it 'only shows passholders of a certain age' do
+
+    expect(PassHolder.minimum_age(60)).to eq([@jerry])
+    expect(PassHolder.minimum_age(60)).to_not eq([@dana, @kerri])
+    expect(PassHolder.minimum_age(14)).to eq([@jerry, @kevin, @dana])
+    expect(PassHolder.minimum_age(14)).to_not eq([@kerri])
   end
 end

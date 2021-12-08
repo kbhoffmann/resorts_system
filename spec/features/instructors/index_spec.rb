@@ -32,4 +32,14 @@ RSpec.describe 'Instructors index' do
     expect(current_path).to eq("/instructors/#{instructor.id}/edit")
   end
 
+  it 'deletes a listed instructor' do
+    instructor = Instructor.create!(name: "Olga", subject: "skiing", teaches_children: false, years_experience: 5)
+    visit '/instructors'
+
+    click_button("Delete #{instructor.name}")
+    expect(current_path).to eq("/instructors")
+
+    expect(page).to_not have_content("Olga")
+  end
+
 end

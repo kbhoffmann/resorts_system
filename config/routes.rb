@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get '/', to: 'welcome#index'
 
   get '/resorts', to: 'resorts#index'
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#index'
   get '/resorts/:resort_id/resort_pass_holders/new', to: 'resort_pass_holders#new'
   post '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#create'
-  post '/resorts', to: 'resorts#create'
 
   get '/instructors', to: 'instructors#index'
   get '/instructors/new', to: 'instructors#new'
