@@ -15,4 +15,6 @@
   <p>Season Pass?:<%= holder.season_pass %></p>
   <p>Created At: <%= holder.created_at %></p>
   <p>Updated At:<%= holder.updated_at %></p>
+  <%= button_to "Delete #{holder.name}", "/pass_holders/#{holder.id}", method: :delete %>
+  <%= button_to "Update #{holder.name}", "/pass_holders/#{holder.id}/edit", method: :get %>
 <% end %>
