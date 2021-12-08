@@ -6,9 +6,6 @@ RSpec.describe 'Resorts index' do
     @breck = Resort.create!(name: 'Breckenridge', city: 'Breckenridge', runs: 20, ski_only: false )
     @copper = Resort.create!(name: 'Copper', city: 'Frisco', runs: 15, ski_only: true)
     @seven_springs = Resort.create!(name: 'Seven Springs', city: 'Champion', runs: 9, ski_only: false)
-  #   @kerri = @breck.pass_holders.create!(name: 'Kerri', age: 11, level: 'beginner', season_pass: true)
-  #   @rob = @breck.pass_holders.create!(name: 'Rob', age: 40, level: 'advanced', season_pass: false)
-  #   @dana = @breck.pass_holders.create!(name: 'Dana', age: 31, level: 'intermediate', season_pass: false)
   end
 
   it 'shows when each resort was created' do

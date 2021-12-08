@@ -2,9 +2,12 @@ class ResortPassHoldersController < ApplicationController
 
   def index
     @resort = Resort.find(params[:resort_id])
-    @pass_holders = @resort.pass_holders
     if params[:sort]
-      @pass_holders = @pass_holders.sort_name_alphabetically
+      @pass_holders = @resort.pass_holders.sort_name_alphabetically
+    elsif params[:min_age]
+      @pass_holders = @resort.pass_holders.minimum_age(params[:min_age])
+    else
+      @pass_holders = @resort.pass_holders
     end
   end
 

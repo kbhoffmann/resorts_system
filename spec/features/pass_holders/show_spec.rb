@@ -29,8 +29,7 @@ RSpec.describe 'the pass holders show page' do
   it 'has a button to delete a pass holder' do
 
     visit "/pass_holders/#{@kerri.id}"
-    save_and_open_page
-
+  
     expect(page).to have_button("Delete #{@kerri.name}")
     expect(page).to_not have_button("Delete #{@dana.name}")
     expect(page).to_not have_button("Delete #{@rob.name}")
