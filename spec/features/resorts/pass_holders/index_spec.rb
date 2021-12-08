@@ -19,6 +19,21 @@ RSpec.describe 'Resorts pass holder index' do
     expect(page).to_not have_content(@kerri.name)
   end
 
+  it 'has a button to update a passholder information' do
+    visit "/resorts/#{@breck.id}/pass_holders"
+    expect(page).to have_button("Update #{@jerry.name}")
+    expect(page).to have_button("Update #{@dana.name}")
+    expect(page).to_not have_button("Update #{@kerri.name}")
+  end
+
+  it 'has a button to delete a passholder' do
+    visit "/resorts/#{@breck.id}/pass_holders"
+
+    expect(page).to have_button("Delete #{@jerry.name}")
+    expect(page).to have_button("Delete #{@dana.name}")
+    expect(page).to_not have_button("Delete #{@kerri.name}")
+  end
+
   it 'has a link to sort all the passholders in alphabetical order' do
     visit "/resorts/#{@breck.id}/pass_holders"
 
