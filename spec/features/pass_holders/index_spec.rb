@@ -30,5 +30,9 @@ RSpec.describe "Pass holders index" do
     expect(page).to have_button("Update #{@eric.name}")
     expect(page).to_not have_button("Update #{@dana.name}")
     expect(page).to_not have_button("Update #{@rob.name}")
+
+    click_button("Update #{@kerri.name}")
+
+    expect(current_path).to eq("/pass_holders/#{@kerri.id}/edit")
   end
 end
