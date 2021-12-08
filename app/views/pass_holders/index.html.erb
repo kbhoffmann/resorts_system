@@ -7,4 +7,5 @@
   <p>Level: <%= pass_holder.level%></p>
   <p>Created At: <%= pass_holder.created_at%></p>
   <p>Updated At: <%= pass_holder.updated_at%></p>
+  <%= button_to "Update #{pass_holder.name}", "/pass_holders/#{pass_holder.id}/edit", method: :get %>
 <% end %>
