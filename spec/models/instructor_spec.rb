@@ -11,6 +11,24 @@ RSpec.describe Instructor do
     expect(Instructor.ordered_by_created_at).to eq( [bob, tristan, gretchen])
   end
   
+  it 'provides the count of students for each instructor' do
+    gretel = Instructor.create!(name: 'Gretchen', subject: "cross-country skiing", teaches_children: true, years_experience:10)
+    sally = gretel.students.create!(name: 'Sally', subject: "cross-country skiing", returning_student: true, age: 10, level: "intermediate")
+    billy = gretel.students.create!(name: 'Billy', subject: "cross-country skiing", returning_student: false, age: 18, level: "intermediate")
+
+    christian = Instructor.create!(name: 'Tristan', subject: "snowboarding", teaches_children: false, years_experience:8)
+    seth = christian.students.create!(name: 'Seth', subject: "snowboarding", returning_student: false, age: 15, level: "beginner")
+
+    rob = Instructor.create!(name: 'Bob', subject: "skiing", teaches_children: false, years_experience:12)
+    beth = rob.students.create!(name: 'Beth', subject: "skiing", returning_student: false, age: 15, level: "beginner")
+    carly = rob.students.create!(name: 'Carly', subject: "skiing", returning_student: false, age: 15, level: "beginner")
+    andy = rob.students.create!(name: 'Andy', subject: "snowboarding", returning_student: false, age: 15, level: "beginner")
+
+    expect(gretel.students_count).to eq(2)
+    expect(christian.students_count).to eq(1)
+    expect(rob.students_count).to eq(3)
+  end
+
   it 'orders instructors by count of students' do
     gretel = Instructor.create!(name: 'Gretchen', subject: "cross-country skiing", teaches_children: true, years_experience:10)
     sally = gretel.students.create!(name: 'Sally', subject: "cross-country skiing", returning_student: true, age: 10, level: "intermediate")

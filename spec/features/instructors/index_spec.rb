@@ -20,8 +20,11 @@ RSpec.describe 'Instructors index' do
     click_link("Sort instructors by number of students")
 
     expect(page).to have_content(bob.name)
+    expect(page).to have_content(bob.students_count)
     expect(page).to have_content(gretchen.name)
+    expect(page).to have_content(gretchen.students_count)
     expect(page).to have_content(tristan.name)
+    expect(page).to have_content(tristan.students_count)
 
     expect(bob.name).to appear_before(gretchen.name)
     expect(gretchen.name).to appear_before(tristan.name)

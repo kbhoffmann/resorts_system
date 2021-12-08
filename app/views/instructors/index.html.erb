@@ -1,5 +1,6 @@
 <h1>Instructors</h1>
 
+  <%= link_to "New Instructor", "/instructors/new" %>
   <%= link_to "Sort instructors by number of students", "/instructors?sort=desc" %>
 
   <% @instructors.each do |instructor| %>
@@ -8,13 +9,11 @@
     <p>Instructor Subject Taught: <%= instructor.subject %></p>
     <p>Teaches Children? <%= instructor.teaches_children %></p>
     <p>Years Experience: <%= instructor.years_experience %></p>
+    <p>Number of Students: <%= instructor.students_count %>
     <p>Created at: <%= instructor.created_at %></p>
     <p>Updated at: <%= instructor.updated_at %></p>
 
-    <%= button_to "View #{instructor.name}", "/instructors/#{instructor.id}", method: :get %>
-    <%= button_to "Edit #{instructor.name}", "/instructors/#{instructor.id}/edit", method: :get %>
-    <%= button_to "Delete #{instructor.name}", "/instructors/#{instructor.id}", method: :delete %>
-
+    <p><%= button_to "View #{instructor.name}", "/instructors/#{instructor.id}", method: :get %></p>
+    <p><%= button_to "Edit #{instructor.name}", "/instructors/#{instructor.id}/edit", method: :get %></p>
+    <p><%= button_to "Delete #{instructor.name}", "/instructors/#{instructor.id}", method: :delete %></p>
   <% end %>
-
-<%= link_to "New Instructor", "/instructors/new" %>
