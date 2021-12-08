@@ -9,17 +9,17 @@ RSpec.describe 'the Pass Holder Creation' do
 
   it 'links to the new passholder form page from the resort passholders index' do
 
-    visit "/resorts/#{@breck.id}/resort_pass_holders"
+    visit "/resorts/#{@breck.id}/pass_holders"
 
     click_link('New Passholder')
 
-    expect(current_path).to eq("/resorts/#{@breck.id}/resort_pass_holders/new")
-    expect(current_path).to_not eq("/resorts/#{@park_city.id}/resort_pass_holders/new")
+    expect(current_path).to eq("/resorts/#{@breck.id}/pass_holders/new")
+    expect(current_path).to_not eq("/resorts/#{@park_city.id}/pass_holders/new")
   end
 
   it 'can create a new passholder' do
 
-    visit "/resorts/#{@breck.id}/resort_pass_holders/new"
+    visit "/resorts/#{@breck.id}/pass_holders/new"
 
     fill_in('name', with: "Kelsey")
     fill_in('age', with: 38)
@@ -28,8 +28,8 @@ RSpec.describe 'the Pass Holder Creation' do
 
     click_button('Create New Passholder')
 
-    expect(current_path).to eq("/resorts/#{@breck.id}/resort_pass_holders")
-    expect(current_path).to_not eq("/resorts/#{@park_city.id}/resort_pass_holders")
+    expect(current_path).to eq("/resorts/#{@breck.id}/pass_holders")
+    expect(current_path).to_not eq("/resorts/#{@park_city.id}/pass_holders")
 
     expect(page).to have_content("Kelsey")
     expect(page).to have_content(38)

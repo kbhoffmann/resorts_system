@@ -44,9 +44,9 @@ RSpec.describe 'the resorts show page' do
 
     click_on "Passholders for this Resort"
 
-    expect(current_path).to eq("/resorts/#{@breck.id}/resort_pass_holders")
-    expect(current_path).to_not eq("/resorts/#{@copper.id}/resort_pass_holders")
-    expect(current_path).to_not eq("/resorts/#{@seven_springs.id}/resort_pass_holders")
+    expect(current_path).to eq("/resorts/#{@breck.id}/pass_holders")
+    expect(current_path).to_not eq("/resorts/#{@copper.id}/pass_holders")
+    expect(current_path).to_not eq("/resorts/#{@seven_springs.id}/pass_holders")
   end
 
   it 'has a can link to edit the resort information' do
@@ -67,7 +67,7 @@ RSpec.describe 'the resorts show page' do
   it 'has a button to delete a the resort' do
 
     visit "/resorts/#{@breck.id}"
-    
+
     expect(page).to have_button("Delete #{@breck.name}")
     expect(page).to_not have_button("Delete #{@copper.name}")
     expect(page).to_not have_button("Delete #{@seven_springs.name}")

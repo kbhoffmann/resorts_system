@@ -1,4 +1,4 @@
-<%= form_with url: "/resorts/#{@resort.id}/resort_pass_holders", method: :post, local: true do |form| %>
+<%= form_with url: "/resorts/#{@resort.id}/pass_holders", method: :post, local: true do |form| %>
 <%= form.label :name %>
 <%= form.text_field :name %>
 <%= form.label :age %>
