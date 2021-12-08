@@ -1,6 +1,10 @@
 class InstructorsController < ApplicationController
   def index
-    @instructors = Instructor.ordered_by_created_at
+    if params[:sort]
+      @instructors = Instructor.ordered_by_student_count
+    else
+      @instructors = Instructor.ordered_by_created_at
+    end
   end
 
   def show
