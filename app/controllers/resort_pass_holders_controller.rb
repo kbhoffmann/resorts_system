@@ -20,7 +20,7 @@ class ResortPassHoldersController < ApplicationController
 
     resort.pass_holders.create!(resort_pass_holder_params)
 
-    redirect_to "/resorts/#{resort.id}/resort_pass_holders"
+    redirect_to "/resorts/#{resort.id}/pass_holders"
   end
 
   private

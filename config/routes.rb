@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   patch '/resorts/:id', to: 'resorts#update'
   delete '/resorts/:id', to: 'resorts#destroy'
 
-  get '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#index'
-  get '/resorts/:resort_id/resort_pass_holders/new', to: 'resort_pass_holders#new'
-  post '/resorts/:resort_id/resort_pass_holders', to: 'resort_pass_holders#create'
+  get '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#index'
+  get '/resorts/:resort_id/pass_holders/new', to: 'resort_pass_holders#new'
+  post '/resorts/:resort_id/pass_holders', to: 'resort_pass_holders#create'
 
   get '/instructors', to: 'instructors#index'
   get '/instructors/new', to: 'instructors#new'

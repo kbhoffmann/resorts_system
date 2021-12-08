@@ -1,7 +1,7 @@
-<%= link_to 'New Passholder', "/resorts/#{@resort.id}/resort_pass_holders/new" %>
-<%= link_to 'Sort Passholders Alphabetically', "/resorts/#{@resort.id}/resort_pass_holders?sort=asc"%>
+<%= link_to 'New Passholder', "/resorts/#{@resort.id}/pass_holders/new" %>
+<%= link_to 'Sort Passholders Alphabetically', "/resorts/#{@resort.id}/pass_holders?sort=asc"%>
 
-<%= form_with url: "/resorts/#{@resort.id}/resort_pass_holders", method: :get, local: true do |form| %>
+<%= form_with url: "/resorts/#{@resort.id}/pass_holders", method: :get, local: true do |form| %>
   <%= form.label :min_age %>
   <%= form.number_field :min_age %>
   <%= form.submit "Return records with pass holders greater than specified age" %>
