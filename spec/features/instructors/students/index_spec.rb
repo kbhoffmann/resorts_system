@@ -53,7 +53,7 @@ RSpec.describe "Instructor's students index" do
     expect(gretchen.name).to appear_before(tristan.name)
   end
 
-  it 'displays student records over a given age threshold' do
+  it 'filters student records: display only those over a user-provided age threshold' do
     hans = Instructor.create!(name: "Hans", subject: "skiing", teaches_children: true, years_experience: 30)
     gretchen = hans.students.create!(name: 'Gretchen', age: 20, subject: "cross-country skiing", returning_student: true, level:"advanced")
     tristan = hans.students.create!(name: 'Tristan', age: 14, subject: "snowboarding", returning_student: false, level:"advanced")
